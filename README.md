@@ -1,1 +1,1 @@
-# CodDev BOT
+# Rendang BOT
