@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/CodDevelopment/CodDev/issues"
   },
-  "homepage": "https://github.com/CodDevelopment/CodDev#readme"
+  "homepage": "https://github.com/CodDevelopment/CodDev#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
 }
