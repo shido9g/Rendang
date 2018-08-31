@@ -46,5 +46,5 @@ exports.conf = {
 exports.help = {
   name: "weather",
   description: 'Search the country to know forecast in that city.',
-  usage: 'weather'
+  usage: 'weather <city>'
 }
