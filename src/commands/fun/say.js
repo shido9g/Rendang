@@ -16,10 +16,12 @@ exports.run = async (bot, message, args) => {
   message.channel.send(botmessage);
 
 }
+exports.conf = {
+  aliases: ['s']
+}
 
 exports.help = {
   name: 'say',
-  aliases: ['s'],
   description: 'Makes Bot Say Something',
-  usage: '(p)say [message]'
+  usage: 'say [message]'
 };
