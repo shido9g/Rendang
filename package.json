@@ -1,0 +1,27 @@
+{
+  "name": "cod-dev-bot",
+  "version": "0.5.3",
+  "description": "CODEX DEVELOPMENT BOT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo WORKING!"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodDevelopment/CodDev.git"
+  },
+  "keywords": [
+    "Discord",
+    "Bot",
+    "Discord.js",
+    "CodDev",
+    "CodDevelopment",
+    "Codex Development"
+  ],
+  "author": "AkizukiMasami, Hazmi35",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodDevelopment/CodDev/issues"
+  },
+  "homepage": "https://github.com/CodDevelopment/CodDev#readme"
+}
