@@ -49,7 +49,7 @@ exports.run = async (client, message, args) => {
             "Very doubtful."
         ]
         let randomize = Math.floor(Math.random() * ballRef.length);
-        if (!wish) return "Ask something, please."
+        if (!wishes) return "Ask something, please."
         return `\:8ball\: | ${ballRef[randomize]}, \*\*${author}\*\*`
     }
     message.channel.send(get8ball(wishes, author));
