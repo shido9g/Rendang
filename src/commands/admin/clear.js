@@ -16,7 +16,8 @@ exports.run = async (client, message, args) => {
 }
 
 exports.conf = {
-    aliases: ['purge']
+    aliases: ['purge'],
+    cooldown: "5"
 }
 
 exports.help = {
