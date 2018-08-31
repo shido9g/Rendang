@@ -2,7 +2,7 @@ const { RichEmbed } = require('discord.js');
 
 exports.run = (client, message, args, color) => {
   
-  let roll = = Math.floor(Math.random() * args.xsides) + 1;
+  let roll = Math.floor(Math.random() * args.xsides) + 1;
   const embed = new RichEmbed() 
   .setColor(color)
   .setThumbnail('https://gilkalai.files.wordpress.com/2017/09/dice.png?w=640')
