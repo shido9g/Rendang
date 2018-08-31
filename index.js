@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 
 // variable berjalan 
-var client = new Discord.Client();
+var client = new Discord.Client({ disableEveryone: true }); //jadi botnya gk bakal bisa tag @everyone
 
 // Ready event
 client.on('ready', () => {
