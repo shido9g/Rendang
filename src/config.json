@@ -1,7 +1,8 @@
 {
-  bot_prefix: ,
-  embed_color: ,
-  owners_id: [
-  
+  "bot_prefix": "",
+  "embed_color": "",
+  "owners_id": [
+    "383600553537699840",
+    "290159952784392202"
   ]
 }
