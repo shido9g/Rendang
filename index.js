@@ -12,9 +12,9 @@ client.on("ready", () => {
   console.log(`${client.user.username} IS NOW ONLINE!`)
 });
 
-client.on("warn", console.warn);
+client.on("warn", warn => console.warn(`WARN : ${warn}`));
 
-client.on("error", console.error);
+client.on("error", err => console.error(`ERROR : ${err}`));
 
 client.on("disconnect", () => console.log("I just disconnected, making sure you know, i will reconnect now..."));
 
