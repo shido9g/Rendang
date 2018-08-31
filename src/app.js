@@ -1,11 +1,11 @@
-const Discord = require('discord.js');
-const client = new Discord.Client({
+const codDevClient = require('./handle/codDevClient');
+const client = new codDevClient({
   fetchAllMembers: true,
   disabledEvents: ["TYPING_START", "USER_NOTE_UPDATE"],
   disableEveryone: true
 });
 
-client.login(TOKEN_GOES_HERE);
-
 require('./handle/events')(client);
 require('./handle/module')(client);
+
+client.login(TOKEN_GOES_HERE);
