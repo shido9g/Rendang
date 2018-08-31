@@ -50,7 +50,7 @@ exports.run = async (client, message, args) => {
         ]
         let randomize = Math.floor(Math.random() * ballRef.length);
         if (!wishes) return "Ask something, please."
-        return `\:8ball\: | ${ballRef[randomize]}, \*\*${author}\*\*`
+        return `\:8ball\: | ${ballRef[randomize]} \*\*${author}\*\*`
     }
     message.channel.send(get8ball(wishes, author));
 }
