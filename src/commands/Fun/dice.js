@@ -1,0 +1,24 @@
+const { RichEmbed } = require('discord.js');
+
+exports.run = (client, message, args, color) => {
+  const embed = new Discord.RichEmbed
+  .setColor(color)
+  .setThumbnail('https://gilkalai.files.wordpress.com/2017/09/dice.png?w=640')
+  .setAuthor(msg.author.username, msg.author.avatarURL)
+  .setTitle('DICE')
+  .setDescription(`
+${Math.floor(Math.random()*8)}
+`);
+  return message.channel.send(embed);
+}
+
+exports.conf = {
+  aliases: ['role-dice'],
+  cooldown: '5'
+}
+
+exports.help = {
+  name: "dice",
+  description: 'Try to roled dice and get your luck.',
+  usage: 'dice'
+}
