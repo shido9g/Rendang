@@ -1,18 +1,18 @@
-const Discord = require('discord.js')
-      
+const Discord = require('discord.js');
+const config = require('../../config.json');
 exports.run = async (client, message, args) => {
         if(!args[1]){
     let help = new Discord.RichEmbed()
     .setAuthor("Playmoe Correct Usage")
-    .addField("listen.moe 🇯🇵","please type **!m.playmoe jp** to play listen.moe jpop")
-    .addField("listen.moe 🇰🇷","please type **!m.playmoe kr** to play listen.moe kpop")
-    .addField("Stop listen.moe","please type **!m.playmoe stop** to stop the current listen.moe")
+    .addField("listen.moe 🇯🇵",`Please type **${config.bot_prefix}playmoe jp** to play listen.moe jpop`)
+    .addField("listen.moe 🇰🇷",`Please type **${config.bot_prefix}playmoe kr** to play listen.moe kpop`)
+    .addField("Stop listen.moe",`Please type **${config.bot_prefix}playmoe stop** to stop the current listen.moe")
     .setFooter("Powered by listen.moe","https://imgdb.net/images/4011.png")
     .setColor("RANDOM")
     message.channel.send(help).then(m => m.delete(10000))
   }
   
-  if(args[1] == "jp"){
+  if(args[0] == "jp"){
     
         const channel = message.member.voiceChannel;
     if(!channel) return message.channel.send('You must join voiceChannel first');
@@ -27,7 +27,7 @@ exports.run = async (client, message, args) => {
     .then(connection => console.log('Connected!'))
     .catch(console.error);
     }
-    if(args[1] == "kr"){
+    if(args[0] == "kr"){
     
         const channel = message.member.voiceChannel;
     if(!channel) return message.channel.send('You must join voiceChannel first');
@@ -42,7 +42,7 @@ exports.run = async (client, message, args) => {
     .then(connection => console.log('Connected!'))
     .catch(console.error);
     }
-  if(args[1] == "stop"){
+  if(args[0] == "stop"){
     let channel = message.member.voiceChannel
     if(!channel) return message.channel.send("you must join VoiceChannel first")
     channel.leave()//.then(message.channel.send(L))
