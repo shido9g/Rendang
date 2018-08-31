@@ -44,6 +44,6 @@ exports.conf = {
 
 exports.help = {
     name: 'help',
-    description: 'Menampilkan daftar perintah dari Dekomori',
+    description: 'Menampilkan daftar perintah dari Rendang',
     usage: 'help'
 }
