@@ -2,15 +2,9 @@ const Discord = require("discord.js");
 
 exports.run = async (bot, message, args) => {
   var botmessage = args.join(" ");
-  if (!botmessage) return {
-    var embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setDescription(`<@${message.author.id}> Saya Harus Ngomong Apa? Masukkan Kata Kata Dengan Benar :V`)
-      .setTimestamp()
-
-    message.channel.send({
-      embed
-    });
+  if (!botmessage) {
+    message.channel.send(":x: Usage : r!say <message>")
+    return;
   }
   message.delete();
   message.channel.send(botmessage);
