@@ -1,7 +1,7 @@
 const { RichEmbed } = require('discord.js');
 
 exports.run = (client, message, args, color) => {
-  const embed = new Discord.RichEmbed
+  const embed = new RichEmbed() 
   .setColor(color)
   .setThumbnail('https://gilkalai.files.wordpress.com/2017/09/dice.png?w=640')
   .setAuthor(message.author.username, message.author.avatarURL)
