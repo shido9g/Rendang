@@ -13,6 +13,7 @@ exports.run = async (client, message, args, color) => {
 
     try {
       const code = args.join(" ");
+      if (!code) return;
       let evaled;
       if (code.includes(`token`)) {
         evaled = 'My Token';
