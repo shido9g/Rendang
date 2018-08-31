@@ -1,6 +1,7 @@
 const { owners_id } = require("../../config.json");
 const { RichEmbed } = require("discord.js");
 const { post } = require('snekfetch');
+const path = require("path");
 
 exports.run = async (client, message, args, color) => {
 
