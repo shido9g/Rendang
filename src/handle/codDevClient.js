@@ -7,4 +7,4 @@ class codDevBot extends Client {
   }
 }
 
-module.exports = codDevClient;
+module.exports = codDevBot;
