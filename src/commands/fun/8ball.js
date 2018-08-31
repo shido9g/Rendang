@@ -7,7 +7,7 @@ exports.help = {
     description: "Tell to the mighty 8 Ball about your fortune.",
     usage: '8ball'
 }
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
     let wishes = args.slice(0).join("");
     let author = message.author.username;
     /**
@@ -49,7 +49,7 @@ exports.run = (client, message, args) => {
             "Very doubtful."
         ]
         let randomize = Math.floor(Math.random() * ballRef.length);
-        if (!wish) return "Ask something, please."
+        if (!wishes) return "Ask something, please."
         return `\:8ball\: | ${ballRef[randomize]}, \*\*${author}\*\*`
     }
     message.channel.send(get8ball(wishes, author));
