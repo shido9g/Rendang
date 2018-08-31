@@ -4,8 +4,8 @@ exports.run = (client, message, args, color) => {
   const embed = new Discord.RichEmbed
   .setColor(color)
   .setThumbnail('https://gilkalai.files.wordpress.com/2017/09/dice.png?w=640')
-  .setAuthor(msg.author.username, msg.author.avatarURL)
-  .setTitle('DICE')
+  .setAuthor(message.author.username, message.author.avatarURL)
+  .setTitle('ROLED DICE')
   .setDescription(`
 ${Math.floor(Math.random()*8)}
 `);
