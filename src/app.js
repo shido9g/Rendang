@@ -8,4 +8,4 @@ const client = new codDevClient({
 require('./handle/events')(client);
 require('./handle/module')(client);
 
-client.login(TOKEN_GOES_HERE);
+client.login(process.env.BOT_TOKEN);
