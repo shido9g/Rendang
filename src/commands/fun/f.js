@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const SQL = require("sqlite3");
+const SQL = require("sqlite3").verbose();
 var database = new SQL.Database('../../database/sqlite/f-total.db');
 
 exports.run = async (client, message, args, color) => {
