@@ -12,3 +12,4 @@ client.on('ready', () => {
 
 // login ke discord 
 client.login('SUPER');
+ 
