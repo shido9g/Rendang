@@ -19,6 +19,6 @@ exports.conf = {
 exports.help = {
   name: "invite",
   description: 'Untuk Menginvite Rendang Ke Server Mu',
-  usage: 'r!invite'
+  usage: 'invite'
 
 }
