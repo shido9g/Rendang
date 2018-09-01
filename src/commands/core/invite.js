@@ -11,19 +11,14 @@ let embed = new Discord.RichEmbed()
 }
 
 exports.conf = {
-
   aliases: ['invite'],
-
   cooldown: '5'
 
 }
 
 exports.help = {
-
   name: "invite",
-
   description: 'Untuk Menginvite Rendang Ke Server Mu',
-
   usage: 'r!invite'
 
 }
