@@ -6,7 +6,7 @@ exports.run = (client, message, args, color) => {
   
   if(isNaN(args[0])) return message.channel.send('You only can use a number in a dice');
   
-  if (!number) number = 6;
+  if (!args[0]) number = 6;
   let roll = Math.floor(Math.random() * number) + 1;
   const embed = new RichEmbed() 
   .setColor(color)
