@@ -3,6 +3,7 @@ const { RichEmbed } = require('discord.js');
 exports.run = (client, message, args, color) => {
   
   let number = args.join(' ');
+  if (!number) number = 10;
   if(isNaN(args[0])) return message.channel.send('You only can use a number in a dice');
   
   let roll = Math.floor(Math.random() * number) + 1;
@@ -11,7 +12,7 @@ exports.run = (client, message, args, color) => {
   .setThumbnail('https://gilkalai.files.wordpress.com/2017/09/dice.png?w=640')
   .setAuthor(message.author.username, message.author.avatarURL)
   .setTitle(`Rolling a ${number} sided dice.`)
-  .setDescription(`You roled a ${number}`)
+  .setDescription(`You roled a ${roll}`)
   return message.channel.send(embed);
 }
 
