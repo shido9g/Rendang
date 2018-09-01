@@ -1,5 +1,5 @@
 const { post } = require('superagent');
-const { RichEmbed } require('discord.js');
+const { RichEmbed } = require('discord.js');
 
 function cppRunner (client, msg, args){
 	args = args.slice(1).join(' ').trim()
