@@ -24,7 +24,7 @@ exports.run = async (client, message, args, color) => {
             }
         }
         var embed = new Discord.RichEmbed()
-            .setAuthor(`${message.author.tag} Has paid their respects!`, `${message.auhtor.displayAvatarURL}`)
+            .setAuthor(`${message.author.tag} Has paid their respects!`, `${message.author.displayAvatarURL}`)
             .setFooter(fTotal + " Respects")
             .setColor(color)
         message.channel.send(embed)
