@@ -4,9 +4,6 @@ const { post } = require('snekfetch');
 const path = require("path");
 
 exports.run = async (client, message, args, color) => {
-
-  const SQL = require('sqlite3').verbose();
-
   var bot = client;
 
   owners_id.forEach(async function(owner) {
