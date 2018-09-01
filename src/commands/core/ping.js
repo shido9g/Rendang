@@ -6,7 +6,7 @@ exports.run = async (client, message, args, color) => {
     let diff = (Date.now() - start).toLocaleString();
     let API = (client.ping).toFixed(2)
     let embed = new Discord.RichEmbed()
-    .setTitle(`:ping_pong: Pong!`)
+    .setTitle(`🏓 Pong!`)
     .setColor(color)
     .addField("Latency", `${diff}ms`, true)
     .addField("API", `${API}ms`, true)
