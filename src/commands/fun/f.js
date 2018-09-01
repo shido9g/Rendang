@@ -8,12 +8,12 @@ exports.run = async (client, message, args, color) => {
 }
 
 exports.conf = {
-  aliases: ["ev", "e"],
-  cooldowns: '0'
+  aliases: [],
+  cooldowns: '5'
 }
 
 exports.help = {
-  name: "eval",
-  description: "evaluated",
-  usage: "eval {some super javascript code}"
+  name: "f",
+  description: "press f to pay respect",
+  usage: "f"
 }
