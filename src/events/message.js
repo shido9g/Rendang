@@ -6,7 +6,15 @@ module.exports = async (client, message) => {
     let prefix = PREFIX.toLowerCase();
     let msg = message.content.toLowerCase();
     
-    if (msg.startsWith(prefix)) return require('../handle/command')(client, message);
+    if (msg.startsWith(prefix)) {
+        try {
+        require('../handle/command')(client, message);
+        } catch(e) {
+            console.error(e)
+        } finally {
+            console.info(`${message.author.tag}[${message.author.id}] is using ${message.content.split(" ")[0].replace(PREFIX, '')} command on ${message.guild.name}[${message.guild.id}]`)
+        }
+    } 
     if (msg == `<@${client.user.id}>` || msg == `<@!${client.user.id}>`) {
         message.reply('Hai :wave:');
     }
