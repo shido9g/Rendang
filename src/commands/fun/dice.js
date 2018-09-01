@@ -3,10 +3,10 @@ const { RichEmbed } = require('discord.js');
 exports.run = (client, message, args, color) => {
   
   let number = args.join('');
-  
+  if (!args[0]) number = 6; // astaga 
   if(isNaN(args[0])) return message.channel.send('You only can use a number in a dice');
   
-  if (!args[0]) number = 6;
+  
   let roll = Math.floor(Math.random() * number) + 1;
   const embed = new RichEmbed() 
   .setColor(color)
