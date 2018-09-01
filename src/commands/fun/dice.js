@@ -10,7 +10,7 @@ exports.run = (client, message, args, color) => {
   .setColor(color)
   .setThumbnail('https://gilkalai.files.wordpress.com/2017/09/dice.png?w=640')
   .setAuthor(message.author.username, message.author.avatarURL)
-  .setTitle("Rolling a " number " sided dice.")
+  .setTitle(`Rolling a ${number} sided dice.`)
   .setDescription(`You roled a ${number}`)
   return message.channel.send(embed);
 }
