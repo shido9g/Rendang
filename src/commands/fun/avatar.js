@@ -4,7 +4,7 @@ exports.run = async (bot, message, args) => {
 
 const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
   let avatarembed = new Discord.RichEmbed()
-  .setColor(color)
+  .setColor("RANDOM")
   .setAuthor(member.user.tag)
   .setImage(member.user.displayAvatarURL);
 
@@ -20,5 +20,5 @@ exports.conf = {
 exports.help = {
   name: "avatar",
   description: 'Melihat Avatar Seseorang :V',
-  usage: 'avatar'
+  usage: 'avatar @Mention Someone'
 }
