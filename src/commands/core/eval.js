@@ -57,7 +57,7 @@ function clean(text) {
 exports.conf = {
   aliases: ["ev", "e"],
   cooldowns: '0'
-}
+} //k
 
 exports.help = {
   name: "eval",
