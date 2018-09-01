@@ -1,10 +1,10 @@
 const { post } = require('superagent');
 const { RichEmbed } = require('discord.js');
 
-function cppRunner (client, msg, args){
+async function cppRunner (client, msg, args){
 	args = args.slice(1).join(' ').trim()
 	if(!args) return msg.reply('please add some code');
-	const { text } = post('http://coliru.stacked-crooked.com/compile')
+	const { text } = await post('http://coliru.stacked-crooked.com/compile')
 	.send({
 		cmd: 'g++ main.cpp && ./a.out',
 		src: args
