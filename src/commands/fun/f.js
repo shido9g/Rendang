@@ -3,7 +3,7 @@ const path = require("path");
 const SQL = require('sqlite3').verbose();
 
 exports.run = async (client, message, args, color) => {
-    const database = new SQL.Database(path.join(__dirname, '..', '..', 'Databases', 'f-total.db'));
+    //const database = new SQL.Database(path.join(__dirname, '..', '..', 'Databases', 'f-total.db'));
 
 }
 
