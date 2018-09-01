@@ -19,6 +19,6 @@ exports.conf = {
 
 exports.help = {
   name: "avatar",
-  description: 'Melihat Avatar Seseorang :V',
-  usage: 'avatar @Mention Someone'
+  description: `See someone's avatar`,
+  usage: 'avatar [mention]'
 }

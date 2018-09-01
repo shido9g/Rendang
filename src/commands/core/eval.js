@@ -2,8 +2,11 @@ const { owners_id } = require("../../config.json");
 const { RichEmbed } = require("discord.js");
 const { post } = require('snekfetch');
 const path = require("path");
+const SQL = require('sqlite3').verbose;
 
 exports.run = async (client, message, args, color) => {
+
+  var bot = client;
 
   owners_id.forEach(async function(owner) {
     if (message.author.id !== owner) return;
