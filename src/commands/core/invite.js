@@ -1,0 +1,29 @@
+exports.run = async ("bot, message, args") => {
+
+let embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("Ingin Menginvite Rendang Ke Server Mu?")
+      .setDescription("[Klik Disini](https://discordapp.com/oauth2/authorize?client_id=485054998632464384&scope=bot&permissions=112327680)")
+      .setFooter(`Requested By : ${message.author.username}`);
+      
+     message.channel.send(embed);
+     
+}
+
+exports.conf = {
+
+  aliases: ['invite'],
+
+  cooldown: '5'
+
+}
+
+exports.help = {
+
+  name: "invite",
+
+  description: 'Untuk Menginvite Rendang Ke Server Mu',
+
+  usage: 'r!invite'
+
+}
