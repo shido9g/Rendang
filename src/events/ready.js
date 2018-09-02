@@ -4,6 +4,16 @@ module.exports = client => {
     let status = [`with ${client.users.size} users`, `on Saucecade`];
     let rstatus = Math.floor(Math.random() * status.length);
     client.user.setActivity(status[rstatus], { type: 'PLAYING' });
-  }; setInterval(randStatus, 60000);
+  };
+setInterval(randStatus, 60000);
   console.log(`${client.user.username} sukses online!`);
+  
+  /*hourly cat present :v*/
+  client.setInterval(() => {
+  	for(const guild of client.guilds.array()){
+	  	const channel = guild.channels.filter(x => x.name === 'bot-spam').first();
+	  	if(!channel) continue;
+		client.commands.get('cat').getCat(channel, 'Hourly Cat present');
+  	}
+  }, 3.6e+6);
 }
