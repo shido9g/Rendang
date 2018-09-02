@@ -16,6 +16,6 @@ module.exports = async (client, message) => {
         }
     } 
     if (msg == `<@${client.user.id}>` || msg == `<@!${client.user.id}>`) {
-        message.reply('Hai :wave:');
+        message.reply(`:wave: | Hai ${message.author}, prefix ku di server ini adalah ${prefix}`);
     }
 }
