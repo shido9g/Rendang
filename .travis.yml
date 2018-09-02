@@ -16,5 +16,5 @@ script:
 
 deploy:
   provider: heroku
-  api_key: <--TOBEFILLEDSOON-->
-  app: <--TOBEFILLEDSOON-->>
+  api_key: $HEROKU_API
+  app: test-bot-wa
