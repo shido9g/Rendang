@@ -4,7 +4,8 @@
   "description": "CODEX DEVELOPMENT BOT",
   "main": "index.js",
   "scripts": {
-    "test": "echo WORKING!"
+    "test": "eslint --ignore-path .gitignore .",
+    "start": "node shard.js"
   },
   "repository": {
     "type": "git",
@@ -25,15 +26,19 @@
   },
   "homepage": "https://github.com/CodDevelopment/CodDev#readme",
   "dependencies": {
-    "bufferutil": "^4.0.0",
-    "discord.js": "^11.4.2",
-    "enmap": "^4.0.11",
-    "enmap-sqlite": "^2.0.5",
-    "math-expression-evaluator": "^1.2.17",
-    "node-opus": "^0.3.0",
-    "snekfetch": "^4.0.4",
-    "sqlite3": "^4.0.2",
-    "superagent": "^3.8.3",
-    "weather-js": "^2.0.0"
-  }
+    "bufferutil": "4.0.0",
+    "discord.js": "11.4.2",
+    "enmap": "4.0.11",
+    "enmap-sqlite": "2.0.5",
+    "math-expression-evaluator": "1.2.17",
+    "node-opus": "0.3.0",
+    "snekfetch": "4.0.4",
+    "sqlite3": "4.0.2",
+    "superagent": "3.8.3",
+    "weather-js": "2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-strongloop": "^2.1.0"
+}
 }
