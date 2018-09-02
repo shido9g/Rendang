@@ -8,7 +8,7 @@ module.exports = client => {
 setInterval(randStatus, 60000);
   console.log(`${client.user.username} sukses online!`);
   
-  /*hourly cat present :v*/
+  /*hourly cat present :v - youKnowOwO*/ /*ok then - Hazmi35*/
   client.setInterval(() => {
   	for(const guild of client.guilds.array()){
 	  	const channel = guild.channels.filter(x => x.name === 'bot-spam').first();
