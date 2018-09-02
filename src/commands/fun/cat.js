@@ -10,7 +10,7 @@ function showCat (client, msg, args){
 }
 
 exports.getCat = async (channel, extend = '') => {
-	const { body: { file } } = get('https://aws.random.cat/meow');
+	const { body: { file } } = await get('https://aws.random.cat/meow');
 	const ctx = new RichEmbed();
 	ctx.setTitle('🐈 Cat');
 	ctx.setURL(file);
