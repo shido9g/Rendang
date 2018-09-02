@@ -1,8 +1,12 @@
 {
-  "name": "cod-dev-bot",
-  "version": "0.5.3",
-  "description": "CODEX DEVELOPMENT BOT",
+  "name": "rendang-bot",
+  "version": "0.7.9",
+  "description": "Rendang Discord BOT",
   "main": "index.js",
+  "engines": {
+    "node": "8.x",
+    "npm": "5.6.0"    
+  },
   "scripts": {
     "test": "eslint --ignore-path .gitignore .",
     "start": "node shard.js"
@@ -17,7 +21,9 @@
     "Discord.js",
     "CodDev",
     "CodDevelopment",
-    "Codex Development"
+    "Codex Development",
+    "Rendang",
+    "Rendang Bot"
   ],
   "author": "AkizukiMasami, Hazmi35",
   "license": "MIT",
