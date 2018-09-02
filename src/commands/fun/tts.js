@@ -4,7 +4,7 @@ async function tts (client, msg, args){
 	const vc = msg.member.voiceChannel;
 	if(sess.has(msg.guild.id)) return msg.channel.send('Im already play tts in this guild');
 	if(!vc) return msg.channel.send('Please join voice channel first');
-	if(!vc.permissionsFor(client.userr).has(['CONNECT', 'SPEAK'])) return msg.channel.send('Missing the "Connect" or "Speak" permission for the voice channel.');
+	if(!vc.permissionsFor(msg.guild.me).has(['CONNECT', 'SPEAK'])) return msg.channel.send('Missing the "Connect" or "Speak" permission for the voice channel.');
 	if (!vc.joinable) return msg.say('Your voice channel is not joinable.');
 	if(!args.length) return msg.channel.send('please provide text!');
 	try{
