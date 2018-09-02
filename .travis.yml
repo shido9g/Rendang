@@ -13,6 +13,5 @@ script:
 deploy:
   provider: heroku
   api_key: $HEROKU_API
-  app: test-bot-wa
-  on:
-    all_branches: true
+  app: rendang-bot
+  on: master
