@@ -3,13 +3,13 @@ const { get } = require('superagent');
 
 function showCat (client, msg, args){
 	try{
-		return exports.getCat(client, msg.channel);
+		return exports.getCat(msg.channel);
 	} catch (err) {
 		return msg.channel.send(err.stack, { code: 'ini' });
 	}
 }
 
-exports.getCat = (client, channel, extend = ''){
+exports.getCat = async (channel, extend = '') => {
 	const { body: { file } } = get('https://aws.random.cat/meow');
 	const ctx = new RichEmbed();
 	ctx.setTitle('🐈 Cat');
