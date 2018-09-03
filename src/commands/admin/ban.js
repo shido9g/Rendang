@@ -23,7 +23,7 @@ return message.channel.send(embed);
 Reason: "${reason}"`);
     }
     let embedB = new RichEmbed()
-    .setColor(color)
+    .setColor('RANDOM')
     .setTitle('User Banned')
     .addField('username', toBan.user.username, true)
     .addField('ID', toBan.id, true)
