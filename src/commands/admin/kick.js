@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_MESSAGES")){ 
     let embed = new RichEmbed()
       .setColor("RANDOM")
-      .setTitle("Sorry You No Have Permissions To Ban Members");
+      .setTitle("Sorry You No Have Permissions To Kick Members");
 return message.channel.send(embed);
   }
   if (!message.guild.member(client.user).hasPermission("MANAGE_NICKNAMES")) return message.channel.send(`**${message.author.tag}** Sorry, I don't have \`KICK_MEMBERS\` permissions.`).then(msg=>msg.delete(5000))
