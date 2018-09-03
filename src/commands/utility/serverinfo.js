@@ -24,7 +24,7 @@ let sicon = message.guild.iconURL; // kalau server gunakan icon bukan displayAva
     }
     
     exports.help = {
-      name: "help",
+      name: "serverinfo",
       description: 'Melihat Info Server',
       usage: 'serverinfo'
     }
