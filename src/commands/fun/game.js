@@ -43,7 +43,7 @@ async function gameBuilder (client, msg, args){
 		} else if(gamename === 'trivia' || gamename === 'tv'){
 			const choices = ['🇦', '🇧', '🇨', '🇩'];
 			const fetchMess = await msg.channel.send('Fetching question...');
-			const { body } = get('https://opentdb.com/api.php');
+			const { body } = get('https://opentdb.com/api.php')
 			.query({
 				amount: 1,
 				encode: 'url3986'
