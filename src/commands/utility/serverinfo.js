@@ -1,4 +1,7 @@
 const Discord = require("discord.js");
+const moment = require("moment");
+const momentDurationFormat = require("moment-duration-format");
+const momentTimezone = require("moment-timezone");
 
 exports.run = async (client, message, args) => {
   /*Nanti gua ganti jadi serverinfo gua - Hazmi35*/

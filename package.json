@@ -5,7 +5,7 @@
   "main": "index.js",
   "engines": {
     "node": "8.x",
-    "npm": "5.6.0"    
+    "npm": "5.6.0"
   },
   "scripts": {
     "test": "eslint --ignore-path .gitignore .",
@@ -37,6 +37,9 @@
     "enmap": "4.0.11",
     "enmap-sqlite": "2.0.5",
     "math-expression-evaluator": "1.2.17",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2",
+    "moment-timezone": "^0.5.21",
     "node-opus": "0.3.0",
     "snekfetch": "4.0.4",
     "sqlite3": "4.0.2",
@@ -46,5 +49,5 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-strongloop": "^2.1.0"
-}
+  }
 }
