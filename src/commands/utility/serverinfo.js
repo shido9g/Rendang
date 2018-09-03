@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 exports.run = async (bot, message, args) => {
 
 let sicon = message.guild.iconURL; // kalau server gunakan icon bukan displayAvatar
+            let online = message.guild.members.filter(o => o.presence.status === 'online').size
 		let serverembed = new Discord.RichEmbed()
 		.setAuthor(message.guild.name, sicon)
 		.setThumbnail(sicon)
@@ -17,7 +18,7 @@ let sicon = message.guild.iconURL; // kalau server gunakan icon bukan displayAva
                 .addField("🌈 • Jumlah Member", message.guild.memberCount, true)
                 .addField("👦 • Jumlah User", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
                 .addField("🤖 • Jumlah Robot", message.guild.members.filter(m => m.user.bot).size, true)
-                .addField("🔵 • Jumlah User Yang Sedang Online", online.size, true)
+                .addField("🔵 • Jumlah User Yang Sedang Online", online, true)
                 .addField("♥ • Jumlah Roles", message.guild.roles.size, true)
                 .setFooter(`Requested By : ${message.author.tag}`);
 
