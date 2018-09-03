@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
   let embed = new RichEmbed()
   .setFooter('Powered by adviceslip.com')
   .setTimestamp()
-  .setColor(color)
+  .setColor('RANDOM')
   .setTitle('Advice Slip #' + advice.slip.slip_id)
   .setDescription(advice.slip.advice);
   message.channel.send(embed);
