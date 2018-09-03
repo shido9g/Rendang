@@ -7,6 +7,7 @@ exports.run = async (client, message, args) => {
       .setTitle("Sorry You No Have Permissions To Ban Members");
 return message.channel.send(embed);
   }
+  if (!message.guild.member(client.user).hasPermission("MANAGE_NICKNAMES")) return message.channel.send(`**${message.author.tag}** Sorry, I don't have \`BAN_MEMBERS\` permissions.`).then(msg=>msg.delete(5000))
   
   let toBan = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if(!toBan) return message.channel.sendMessage("Can't find user! Please Mention User !");
