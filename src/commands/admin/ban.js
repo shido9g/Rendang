@@ -15,11 +15,7 @@ return message.channel.send(embed);
   
   if (toBan.highestRole.position < message.guild.member(client.user).highestRole.position) {
    message.guild.member(toBan).ban(reason);
-  } else {
-   message.channel.send(`Infortunately I cannot ban **${toBan.user.tag}** because the role is higher than mine.`)
-  }
-   
-  try {
+   try {
     if (!reason) {
       toBan.send(`**${toBan.user.tag}** You were banned from **${message.guild.name}**`)
     } else {
@@ -34,6 +30,9 @@ Reason: "${reason}"`);
     message.channel.send(embedB);
   } catch (e) {
     console.log(e.message)
+  }
+  } else {
+   message.channel.send(`Infortunately I cannot ban **${toBan.user.tag}** because the role is higher than mine.`)
   }
 }
  
