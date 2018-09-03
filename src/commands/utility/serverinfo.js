@@ -18,7 +18,7 @@ let sicon = message.guild.iconURL; // kalau server gunakan icon bukan displayAva
    }
 
    exports.conf = {
-     aliases: ['server-info'],
+     aliases: ['server'],
      cooldown: '5'
    
     }
