@@ -18,7 +18,7 @@ let sicon = message.guild.iconURL; // kalau server gunakan icon bukan displayAva
                 .addField("🌈 • Jumlah Member", message.guild.memberCount, true)
                 .addField("👦 • Jumlah User", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
                 .addField("🤖 • Jumlah Robot", message.guild.members.filter(m => m.user.bot).size, true)
-                .addField("🔵 • Jumlah User Yang Sedang Online", online, true)
+                .addField("🔵 • Jumlah User Yang Sedang Online", `${online}`, true)
                 .addField("♥ • Jumlah Roles", message.guild.roles.size, true)
                 .setFooter(`Requested By : ${message.author.tag}`);
 
