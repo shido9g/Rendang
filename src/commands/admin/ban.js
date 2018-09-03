@@ -1,6 +1,6 @@
 const { RichEmbed } = require('discord.js');
 
-exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_MESSAGES")){ 
     let embed = new RichEmbed()
       .setColor("RANDOM")
@@ -8,18 +8,33 @@ exports.run = async (bot, message, args) => {
 return message.channel.send(embed);
   }
   
-   let toBan = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-   if(!toBan) return message.channel.sendMessage("Can't find user! Please Mention User !");
-    
-  toBan.ban(7)
-  .then(() => console.log(`Banned ${toBan.displayName}`))
-  .catch(console.error); 
+  let toBan = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  if(!toBan) return message.channel.sendMessage("Can't find user! Please Mention User !");
+  let reason = args.join(" ").slice(22);
+  if (toBan.hasPermission("BAN_MEMBERS")) return message.channel.send("That person can't be banned").then(msg => msg.delete(3000));
   
-  let embed = new RichEmbed()
-    .setColor("RANDOM")
-    .setTitle(`${toBan.displayName} Sudah Diban Dari Server !`);
-  message.channel.send(embed);
-  
+  if (toBan.highestRole.position < message.guild.member(client.user).highestRole.position) {
+   message.guild.member(toBan).ban(reason);
+  } else {
+   message.channel.send(`Infortunately I cannot ban **${toBan.user.tag}** because the role is higher than mine.`)
+  }
+   
+  try {
+    if (!reason) {
+      toBan.send(`**${toBan.user.tag}** You were banned from **${message.guild.name}**`)
+    } else {
+      toBan.send(`**${toBan.user.tag}** You were banned from **${message.guild.name}**
+Reason: "${reason}"`);
+    }
+    let embedB = new RichEmbed()
+    .setColor(color)
+    .setTitle('User Banned')
+    .addField('username', toBan.user.username, true)
+    .addField('ID', toBan.id, true)
+    message.channel.send(embedB);
+  } catch (e) {
+    console.log(e.message)
+  }
 }
  
 exports.conf = {
