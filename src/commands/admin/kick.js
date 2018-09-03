@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_MESSAGES")){ 
     let embed = new RichEmbed()
       .setColor("RANDOM")
-      .setTitle("Sorry You No Have Permissions To Kick Members");
+      .setTitle("Maaf, Kamu Tidak Mempunyai Permissions Untuk Kick Members");
 return message.channel.send(embed);
   }
   if (!message.guild.member(client.user).hasPermission("MANAGE_NICKNAMES")) return message.channel.send(`**${message.author.tag}** Maaf, Rendang Tidak Mempunyai Permissions \`KICK_MEMBERS\` Tolong Beri Permissions \`KICK_MEMBERS\` Terlebih Dahulu.`).then(msg=>msg.delete(5000))
