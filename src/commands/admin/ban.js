@@ -38,7 +38,7 @@ Reason: "${reason}"`);
 }
  
 exports.conf = {
-  aliases: ['ban'],
+  aliases: ['banthx'],
   cooldown: '5'
 }
 
