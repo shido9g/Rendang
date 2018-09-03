@@ -7,25 +7,25 @@ exports.run = async (client, message, args) => {
       .setTitle("Sorry You No Have Permissions To Kick Members");
 return message.channel.send(embed);
   }
-  if (!message.guild.member(client.user).hasPermission("MANAGE_NICKNAMES")) return message.channel.send(`**${message.author.tag}** Sorry, I don't have \`KICK_MEMBERS\` permissions.`).then(msg=>msg.delete(5000))
+  if (!message.guild.member(client.user).hasPermission("MANAGE_NICKNAMES")) return message.channel.send(`**${message.author.tag}** Maaf, Rendang Tidak Mempunyai Permissions \`KICK_MEMBERS\` Tolong Beri Permissions \`KICK_MEMBERS\` Terlebih Dahulu.`).then(msg=>msg.delete(5000))
   
   let toKick = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  if(!toKick) return message.channel.sendMessage("Can't find user! Please Mention User !");
+  if(!toKick) return message.channel.sendMessage("Tidak Dapat Menemukan User ! Mohon Mention Terlebih Dahulu !");
   let reason = args.join(" ").slice(22);
-  if (toKick.hasPermission("KICK_MEMBERS")) return message.channel.send("That person can't be banned").then(msg => msg.delete(3000));
+  if (toKick.hasPermission("KICK_MEMBERS")) return message.channel.send("Hmm Dia Tidak Dapat Dikick :(").then(msg => msg.delete(3000));
   
   if (toKick.highestRole.position < message.guild.member(client.user).highestRole.position) {
-   message.guild.member(toBan).kick(reason);
+   message.guild.member(toKick).kick(reason);
    try {
     if (!reason) {
-      toKick.send(`**${toBan.user.tag}** You were banned from **${message.guild.name}**`)
+      toKick.send(`**${toKick.user.tag}** Kamu Sudah Dikick Dari**${message.guild.name}**`)
     } else {
-      toKick.send(`**${toBan.user.tag}** You were banned from **${message.guild.name}**
-Reason: "${reason}"`);
+      toKick.send(`**${toKick.user.tag}** Kamu Sudah Dikick Dari **${message.guild.name}**
+Alasan: "${reason}"`);
     }
     let embedB = new RichEmbed()
     .setColor('RANDOM')
-    .setTitle('User Kicked From Server')
+    .setTitle('User Sudah Dikick Dari Server')
     .addField('username', toKick.user.username, true)
     .addField('ID', toKick.id, true)
     message.channel.send(embedB);
@@ -33,7 +33,7 @@ Reason: "${reason}"`);
     console.log(e.message)
   }
   } else {
-   message.channel.send(`Infortunately I cannot kick **${toKick.user.tag}** because the role is higher than mine.`)
+   message.channel.send(`Saya Tidak Bisa Kick **${toKick.user.tag}** Karena Rolenya Lebih Tinggi Dari Saya Atau Rolenya Sama Dengan Saya.`)
   }
 }
  
