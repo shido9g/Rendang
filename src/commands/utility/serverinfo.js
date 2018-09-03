@@ -1,32 +1,9 @@
 const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
-
-  let sicon = message.guild.iconURL;
-  let online = message.guild.members.filter(o => o.presence.status === 'online').size
-  let serverembed = new Discord.RichEmbed()
-    .setAuthor(message.guild.name, sicon)
-    .setThumbnail(sicon)
-    .setColor("RANDOM")
-    .addField("ID", message.guild.id, true)
-    .addField("• Owner", message.guild.owner.user.tag, true)
-    .addField("• Nama Server", message.guild.name)
-    .addField("• Server Dibuat Sejak", message.guild.createdAt)
-    .addField("• Kamu Join Sejak", message.member.joinedAt)
-    .addField("• Region", message.guild.region, true)
-    .addField("• Channels", message.guild.channels.size, true)
-    .addField("• Jumlah Member", message.guild.memberCount, true)
-    .addField("• Jumlah User", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
-    .addField("• Jumlah Robot", message.guild.members.filter(m => m.user.bot).size, true)
-    .addField("• Jumlah User Yang Sedang Online", `${online}`, true)
-    .addField("• Jumlah Roles", message.guild.roles.size, true)
-    .setFooter(`Requested By : ${message.author.tag}`);
-
-  message.channel.send(serverembed);
-
   /*Nanti gua ganti jadi serverinfo gua - Hazmi35*/
 
-  /* var verificationLevels = ['**None**', '**Low**', '**Medium**', '**(╯°□°）╯︵ ┻━┻** (High)', '**┻━┻彡 ヽ(ಠ益ಠ)ノ彡┻━┻** (Extreme)'];
+  var verificationLevels = ['**None**', '**Low**', '**Medium**', '**(╯°□°）╯︵ ┻━┻** (High)', '**┻━┻彡 ヽ(ಠ益ಠ)ノ彡┻━┻** (Extreme)'];
   var region = {
     "brazi": "**Brazil** :flag_br:",
     "eu-central": "**Central Europe** :flag_eu:",
@@ -56,7 +33,7 @@ exports.run = async (client, message, args) => {
     .addField(`Owner`, `${message.guild.owner.user.tag} (${message.guild.ownerID})`)
     .addField(`Created At`, `${moment(message.guild.createdAt).utcOffset('+0700').format("dddd, MMMM Do YYYY, HH:mm:ss")}`)
     .setFooter(footer)
-  message.channel.send(embed) */
+  message.channel.send(embed)
 
 }
 
