@@ -5,20 +5,18 @@ exports.run = async (bot, message, args) => {
     let embed = new Discord.RichEmbed()
         .setTitle("Dab")
         .setImage('https://giphy.com/gifs/dab-AHN0PfASlNy3S')
-        .setColor("RANDOM");
-        
+     
       message.channel.send(embed);
       
 }
 
 exports.conf = {
-   aliases: [], 
+   aliases: ['dab'],
    cooldown: '5'
-   
 }
 
 exports.help = {
    name: 'dab',
-   description; 'Dab', 
+   description; 'Dab',
    usage: 'dab'
-} 
+}
