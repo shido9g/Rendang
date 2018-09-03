@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
     .setThumbnail(message.guild.iconURL)
     .setColor("RANDOM")
     .addField(`Level Verifikasi`, `${verificationLevels[message.guild.verificationLevel]}`, true)
-    .addField(`Users [${message.guild.members.size}]`, `<a:online:485069931214536706> **${message.guild.members.filter(m => m.presence.status === 'online').size}** <a:invisible:485069893092376579> **${message.guild.members.filter(m => m.presence.status === 'offline').size}** \n<a:away:485069825345847296> **${message.guild.members.filter(m => m.presence.status === 'idle').size}** <a:dnd:485069860079140864> **${message.guild.members.filter(m => m.presence.status === 'dnd').size}**`, true)
+    .addField(`Users [${message.guild.members.size}]`, `<a:online:486159121033199617> **${message.guild.members.filter(m => m.presence.status === 'online').size}** <a:invisible:486159121490378763> **${message.guild.members.filter(m => m.presence.status === 'offline').size}** \n<a:away:486159122266324992> **${message.guild.members.filter(m => m.presence.status === 'idle').size}** <a:dnd:486159121662607382> **${message.guild.members.filter(m => m.presence.status === 'dnd').size}**`, true)
     .addField(`Jumlah Channels [**${message.guild.channels.size}**]`, `- **${message.guild.channels.filter(m => m.type === 'category').size}** Category \n- **${message.guild.channels.filter(m => m.type === 'text').size}** Text \n- **${message.guild.channels.filter(m => m.type === 'voice').size}** Voice`, true)
     .addField(`Jumlah Roles [${message.guild.roles.size}]`, `Use **${require('../../config.json').bot_prefix}roles** if you want to see the role list`, true)
     .addField(`Owner Server`, `${message.guild.owner.user.tag} (${message.guild.ownerID})`)
