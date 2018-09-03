@@ -1,6 +1,7 @@
 {
   "bot_prefix": "r!",
   "embed_color": "RANDOM",
+  "dbUrl": "https://db.vzrenggamani.tk",
   "owners_id": [
     "383600553537699840",
     "290159952784392202",
