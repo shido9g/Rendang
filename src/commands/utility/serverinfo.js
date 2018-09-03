@@ -7,10 +7,10 @@ let sicon = message.guild.iconURL; // kalau server gunakan icon bukan displayAva
 		.setAuthor("Server Information :")
 		.setColor("RANDOM")
 		.setThumbnail(sicon)
-		.addField("Server Name", message.guild.name)
-		.addField("Created At", message.guild.createdAt) 
-		.addField("You Joined At", message.member.joinedAt)
-		.addField("Owner", message.guild.owner)
+		.addField("Nama Server", message.guild.name)
+		.addField("Server Dibuat Sejak", message.guild.createdAt) 
+		.addField("Kamu Join Sejak", message.member.joinedAt)
+		.addField("Owner Server", message.guild.owner)
     .setFooter(`Requested By : ${message.author.tag}`);
 
 		message.channel.send(serverembed);
