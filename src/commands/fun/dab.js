@@ -11,12 +11,12 @@ exports.run = async (bot, message, args) => {
 }
 
 exports.conf = {
-   aliases: ['dab'],
-   cooldown: '5'
+    aliases: [],
+    cooldown: "5"
 }
 
 exports.help = {
-   name: 'dab',
-   description; 'Dab',
-   usage: 'dab'
+    name: "dab",
+    description: "dab",
+    usage: "dab"
 }
