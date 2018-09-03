@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args) => {
 
 let sicon = message.guild.iconURL; // kalau server gunakan icon bukan displayAvatar
             let online = message.guild.members.filter(o => o.presence.status === 'online').size
