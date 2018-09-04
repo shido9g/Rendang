@@ -13,7 +13,7 @@ exports.run = (client, message, args, color) => {
              // finding weather :) 
     weather.find({search: city, degreeType: 'C'}, function(err, result) {
         if (err) {
-            message.channel.send("**${arg}** Isnt inside my query, please check again")  // you know lah
+            message.channel.send(`**${arg}** Isnt inside my query, please check again`)  // you know lah
             console.log(err.stack)
             return;
         }
@@ -35,7 +35,7 @@ exports.run = (client, message, args, color) => {
         .setThumbnail(result[0].current.imageUrl)
         .setColor(color)
         .setFooter(`Requested by: ${message.author.tag}`)
-        message.channel.send({ embed: embed }) // ngirim embednya
+        message.channel.send(embed) // ngirim embednya
 })};
 
 exports.conf = {
