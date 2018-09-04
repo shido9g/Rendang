@@ -10,9 +10,7 @@ module.exports = async (client, message) => {
         try {
         require('../handle/command')(client, message);
         } catch(e) {
-            console.error(e)
-        } finally {
-            console.info(`${message.author.tag}[${message.author.id}] is using ${message.content.split(" ")[0].replace(PREFIX, '')} command on ${message.guild.name}[${message.guild.id}]`)
+            console.error(e);
         }
     } 
     if (msg == `<@${client.user.id}>` || msg == `<@!${client.user.id}>`) {
