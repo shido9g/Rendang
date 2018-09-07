@@ -11,7 +11,7 @@ async function tts (client, msg, args){
 	try{
 		const { url } = await get('http://tts.cyzon.us/tts')
 		.query({
-			text: decodeURIComponent(args.join(' '));
+			text: decodeURIComponent(args.join(' '))
 		});
 		const connection = await vc.join();
 		sess.add(msg.guild.id);
