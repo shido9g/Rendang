@@ -2,7 +2,7 @@ const { RichEmbed } = require('discord.js');
 const { exec } = require('child_process');
 const { owners_id } = require("../../config.json");
 
-async function exec (client, msg, args){
+async function execute (client, msg, args){
 	if(!owners_id.includes(msg.author.id)) return undefined;
 	try{
 		if(!args.length) return msg.channel.send(this.help.usage, { code: 'ini' });
@@ -26,4 +26,4 @@ this.help = {
 	usage: '$ <command>'
 }
 
-this.run = exec;
+this.run = execute;
