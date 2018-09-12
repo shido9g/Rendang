@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if (!member) return message.channel.send(`**${message.author.username}**, Maaf aku tidak bisa mencari member yang kamu maksud!`).then(msg=>msg.delete(5000));
     
-    let muterole = message.guild.roles.find('name', 'Muted');
+    let muterole = message.guild.roles.find(x => x.name === 'Muted');
     if (!muterole) {
         try {
             muterole = await message.guild.createRole({
