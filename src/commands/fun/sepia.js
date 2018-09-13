@@ -5,7 +5,7 @@ async function Sepia (client, msg, args){
     let user = msg.mentions.users.first() || client.users.get(args[0]);
     if(!user) user = msg.author;
 	try{
-        const { body } = await get(user.displayAtvatarURL.replace(/\.gif+/g, '.png'));
+        const { body } = await get(user.displayAvatarURL.replace(/\.gif+/g, '.png'));
         let canvas = new Canvas(800, 800)
         .addImage(body, 0, 0, 800, 800);
         canvas = sepia(canvas)
