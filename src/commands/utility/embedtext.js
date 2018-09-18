@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (client, message, args, color) => {
+exports.run = async (client, message, args, color) => {
 
     let specifyembed = new Discord.RichEmbed()
         .setColor(color)
@@ -16,14 +16,15 @@ module.exports.run = async (client, message, args, color) => {
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setDescription(`${text}`);
         message.channel.send(embedsay).then(() => { postMsg.delete();});
-        
+};
+
 exports.conf = {
     aliases: ['embed'],
     cooldown: '10'
 };
 
 exports.help = {
-    name: "embed",
+    name: "embedtext",
     description: "Embed pesan yang kamu mau.",
     usage: "embed <text/message>"
 };
