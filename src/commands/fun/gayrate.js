@@ -2,12 +2,14 @@ let { owners_id } = require('../../../src/config');
 
 exports.run = async (client, message, args) => {
 
+  /**
+  * Mau liat contoh embed tanpa  define/manggil package discord.js? nih contohnya!!!
+  */
+  
 let myMention = message.mentions.users.first() || client.users.get(args[0]);
 
-
-
   const randomnumber = Math.floor(Math.random() * 101)
-  if (message.content === '') {
+  if (!myMention) {
     message.channel.send({
       embed: {
         author: {
