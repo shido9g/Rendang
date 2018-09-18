@@ -1,88 +1,50 @@
-let { owners_id } = require('../../../src/config');
+const { owners_id } = require('../../../src/config');
+const { loadImage } = require('canvas');
+const { Canvas } = require('canvas-constructor');
+const { get } = require('superagent');
 
-exports.run = async (client, message, args) => {
-
-  /**
-  * Mau liat contoh embed tanpa  define/manggil package discord.js? nih contohnya!!!
-  */
-  
-let myMention = message.mentions.users.first() || client.users.get(args[0]);
-
-  const randomnumber = Math.floor(Math.random() * 101)
-  if (!myMention) {
-    message.channel.send({
-      embed: {
-        author: {
-          name: message.author.username,
-          icon_url: message.author.avatarURL
-        },
-        title: 'Scanning...',
-        thumbnail: {
-          url: message.author.avatarURL
-        },
-        description: `${message.author.username} memiliki ${randomnumber}% gay! :gay_pride_flag:`,
-        color: 9384170,
-        timestamp: new Date(),
-        footer: {
-          icon_url: message.author.avatarURL
-        }
-      }
-    })
-  }
-  else if (myMention.id === owners_id) {
-    const random = Math.floor(Math.random() * 2)
-
-
-    message.channel.send({
-      embed: {
-        author: {
-          name: myMention.username,
-          icon_url: myMention.avatarURL
-        },
-        title: 'Scanning...',
-        thumbnail: {
-          url: myMention.avatarURL
-        },
-        description: `${myMention.username} memiliki ${random}% gay! :gay_pride_flag:`,
-        color: 9384170,
-        timestamp: new Date(),
-        footer: {
-          icon_url: myMention.avatarURL
-        }
-      }
-    })
-  }
-
-  else if (myMention.id !== owners_id) {
-    message.channel.send({
-      embed: {
-        author: {
-          name: myMention.username,
-          icon_url: myMention.avatarURL
-        },
-        title: 'Scanning...',
-        thumbnail: {
-          url: myMention.avatarURL
-        },
-        description: `${myMention.username} memiliki ${randomnumber}% gay! :gay_pride_flag:`,
-        color: 9384170,
-        timestamp: new Date(),
-        footer: {
-          icon_url: myMention.avatarURL
-        }
-      }
-    })
-  }
-
+exports.run = async (client, msg, args) => {
+	let user = msg.mentions.users.first() || client.users.get(args[0]);
+	if(!user) user = msg.author;
+	let rate = Math.floor(Math.random()*101);
+	if(owners_id.includes(user.id)) rate = Math.floor(Math.random()*2);
+	/* Canvas */
+	const { body: plate } = await get('https://cdn.discordapp.com/attachments/447874901274132481/491724669246767114/rainbow.png');
+	const { body: ava } = await get(user.displayAvatarURL.replace(/\.gif/g, '.png'));
+	const { width, height } = await loadImage(ava);
+	const attachment = new Canvas(width, height)
+	.addImage(ava, 0, 0, width, height)
+	.addImage(plate, 0,0, width, height)
+	.toBuffer();
+	/* Canvas */
+	return msg.channel.send({
+		embed: {
+			author: {
+				name: user.username,
+				icon_url: user.displayAvatarURL
+			},
+			title: 'Scanning...',
+			thumbnail: {
+				url: 'attachment://gay.png'
+			},
+			description: `${user.username} memiliki ${rate}% gay! :gay_pride_flag:`,
+			color: 9384170,
+			timestamp: new Date(),
+			footer: {
+				icon_url: user.displayAvatarURL
+			},
+			file: { attachment, name: 'gay.png'}
+		}
+	});
 }
 
 exports.conf = {
-    aliases: ['gay'],
-    cooldown: "5"
+	aliases: ['gay'],
+	cooldown: 5
 }
 
 exports.help = {
-    name: "gayrate",
-    description: "Ada temanmu 'gay'? haha ayo liat berapa persen 'gay' dia.",
-    usage: "rategay <@mention>"
+	name: 'gayrate',
+	description: 'Ada temanmu \'gay\'? haha ayo liat berapa persen \'gay\' dia.',
+	usage: 'gayrate <@mention | id>'
 }
