@@ -14,4 +14,4 @@ deploy:
   provider: heroku
   api_key: $HEROKU_API
   app: rendang-bot
-  on: master
+  on: development

@@ -8,6 +8,8 @@ async function gameBuilder (client, msg, args){
 			.setColor('YELLOW')
 			.addField('❓ GuessThatNumber [gtn]', 'The bot will give randomly hide number and you must guess it.', true)
 			.addField('🗨 Trivia [tv]', 'Test your knowledge with randomly quiz', true)
+			.addField('🔢 Math [mt]', 'Resolve the math question', true)
+			.addField('⏫ EmojiEmojiRevolution [emjr]', 'Test your speed typing with the given emoji', true)
 			.setFooter('💡 To play game use r!game <gamename>')
 			return msg.channel.send(embed);
 		}
@@ -64,6 +66,55 @@ async function gameBuilder (client, msg, args){
 			await fetchMess.delete()
 			if(answer[choices.indexOf(response.first().emoji.name)] === body.results[0].correct_answer) return msg.reply(`Absolutely right! it' was **${decodeURIComponent(body.results[0].correct_answer)}**`);
 			return msg.reply(`Too bad it's was **${decodeURIComponent(body.results[0].correct_answer)}**`);
+		}else if(gamename === 'math' || gamename === 'mt'){
+			const numberOne = Math.floor(Math.random()*100);
+			const numberTwo = Math.floor(Math.random()*100);
+			const oppr = Math.floor(Math.random()*4);
+			let msgs;
+			let answer;
+			if(oppr === 1){
+				msgs = `${numberOne} + ${numberTwo} = ?`;
+				answer = numberOne + numberTwo;
+			} else if(oppr === 2){
+				msgs = `${numberOne} - ${numberTwo} = ?`;
+				answer = numberOne - numberTwo;
+			}else if(oppr === 3){
+				msgs = `${numberOne} × ${numberTwo} = ?`;
+				answer = numberOne * numberTwo;
+			}else if(oppr === 4){
+				msgs = `${numberOne} : ${numberTwo} = ?`;
+				answer = numberOne / numberTwo;
+			}else {
+				throw new TypeError('Gelo >:(');
+			}
+			await msg.reply(`you have 15 seconds to resolve this.\n\`\`\`${msgs}\`\`\``);
+			const filter = res => !isNaN(res.content) && res.author.id === msg.author.id;
+			const response = await msg.channel.awaitMessages(filter, {
+				max: 1,
+				time: 15000
+			});
+			if(!response.size){
+				return msg.reply(`Sorry time is up!. it was \`${answer}\``);
+			}
+			const choice = parseInt(response.first().content, 10);
+			if(choice === answer) return msg.reply(`Absolutely right! it was \`${answer}\``);
+			return msg.reply(`Too bad... it was \`${answer}\``);
+		}else if(gamename === 'emojiemojirevolution' || gamename === 'emjr'){
+			const emo = ['⬅', '↖', '⬆', '↗', '➡', '↘', '⬇', '↙'];
+			let mustAns = '';
+			for(let i = 0; i < 10; i++){
+				mustAns += emo[Math.floor(Math.random()*emo.length)-1];
+			}
+			const m = await msg.reply(`you have 15 seconds to type this.\n\`\`\`${mustAns}\`\`\``);
+			const filter = res => res.content === mustAns && res.author.id === msg.author.id;
+			const response = await msg.channel.awaitMessages(filter, {
+				max: 1,
+				time: 15000
+			});
+			if(!response.size){
+				return msg.reply('Time is up and you lost :P');
+			}
+			return msg.reply(`You won 😮, your speed typing is \`${(response.first().createdTimestamp - m.createdTimestamp)/1000}s\``);
 		}
 	} catch (err) {
 		return msg.channel.send(err.stack, { code: 'ini' });

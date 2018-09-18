@@ -1,4 +1,5 @@
-const sess = new Set()
+const sess = new Set();
+const { get } = require('superagent');
 
 async function tts (client, msg, args){
 	const vc = msg.member.voiceChannel;
@@ -8,9 +9,13 @@ async function tts (client, msg, args){
 	if (!vc.joinable) return msg.say('Your voice channel is not joinable.');
 	if(!args.length) return msg.channel.send('please provide text!');
 	try{
+		const { url } = await get('http://tts.cyzon.us/tts')
+		.query({
+			text: decodeURIComponent(args.join(' '))
+		});
 		const connection = await vc.join();
 		sess.add(msg.guild.id);
-		connection.player.playUnknownStream(`http://tts.cyzon.us/tts?text=${decodeURIComponent(args.join(' '))}`)
+		connection.playStream(url)
 		.on('end', res => {
 			sess.delete(msg.guild.id);
 			return vc.leave();

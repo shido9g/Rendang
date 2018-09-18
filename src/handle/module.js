@@ -4,7 +4,6 @@ const fs = require('fs');
 module.exports = client => {
     client.commands = new Discord.Collection();
     client.aliases = new Discord.Collection();
-    client.categories = new Discord.Collection();
     client.helps = new Discord.Collection();
 
     fs.readdir('./src/commands/', (err, categories) => {
@@ -30,7 +29,6 @@ module.exports = client => {
                     });
                     client.helps.get(category).cmds.push(prop.help.name)
                 });
-                client.categories.set(category, commands);
             });
         });
     });

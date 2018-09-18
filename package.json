@@ -1,15 +1,15 @@
 {
   "name": "rendang-bot",
-  "version": "0.7.9",
+  "version": "0.8.2",
   "description": "Rendang Discord BOT",
   "main": "index.js",
   "engines": {
     "node": "8.x",
-    "npm": "5.6.0"
+    "npm": "6.4.1"
   },
   "scripts": {
     "test": "eslint --ignore-path .gitignore .",
-    "start": "node shard.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,11 @@
     "snekfetch": "^4.0.4",
     "sqlite3": "^4.0.2",
     "superagent": "^3.8.3",
-    "weather-js": "^2.0.0"
+    "weather-js": "^2.0.0", 
+    "canvas-constructor": "^1.1.0", 
+    "canvas": "^1.6.12",
+    "memejs": "1.0.7", 
+    "relevant-urban": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
