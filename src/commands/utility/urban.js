@@ -31,7 +31,7 @@ exports.run = async (client, message, args, color) => {
 }
 
 exports.conf = {
- aliases: ['relevant-urban],
+ aliases: ['relevant-urban'],
  cooldown: '5'
 } 
 
