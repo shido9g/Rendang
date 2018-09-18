@@ -36,7 +36,7 @@ exports.conf = {
 } 
 
 exports.help = {
- name: 'urban' 
+ name: 'urban', 
  description: 'Singkatan Internet untuk "harus pergi". Juga dapat berarti "baik untuk pergi" tergantung pada konteksnya', 
  usage: 'urban <Test/Message>' 
 } 
