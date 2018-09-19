@@ -26,16 +26,16 @@ exports.run = async (client, message, args, color) => { // eslint-disable-line n
 		return message.reply('Waktu harus dalam format \`<number>[s/m/h/d]\`');
 	}
 
-	message.reply(`Aku akan mengingatkanmu \`${time}\` tentang \`${reminder}\``);
+	message.reply(`Aku akan mengingatkanmu dalam \`${time}\` tentang \`${reminder}\``);
 
 	setTimeout(function () {
-		message.reply(`Anda bertanya kepada saya \`${time}\` lalu untuk mengingatkan Anda tentang \`${reminder}\``);
+		message.author.send(`Anda bertanya kepada saya \`${time}\` lalu untuk mengingatkan Anda tentang \`${reminder}\``);
 	}, parseInt(timems));
 
 };
 
 exports.conf = {
-  aliases: ['reminder'], 
+  aliases: ['remindme'], 
   cooldown: '5'
 } 
 exports.help = {
