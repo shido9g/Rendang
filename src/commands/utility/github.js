@@ -8,9 +8,9 @@ exports.run = async (client, message, args) => {
  
     if (input.indexOf('/') !== -1) {
         let repo = safeRepo(input);
-     message.channel.send('**Please Wait**').then(message => {
+
  
-        message.edit(`:arrows_counterclockwise: Memuat info untuk '${repo}'...`);
+        message.channel.send(`:arrows_counterclockwise: Memuat info untuk '${repo}'...`);
  
         const res = await got(`https://api.github.com/repos/${repo}`, { json: true });
         const json = res.body;
@@ -40,7 +40,7 @@ exports.run = async (client, message, args) => {
                 embed: {
                description: "'', getInfo(item)"
               } 
-} 
+
             });
         });
     }
