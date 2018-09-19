@@ -65,3 +65,13 @@ function getInfo(json) {
 \tGunakan \`git clone ${json.clone_url}\` untuk mengkloning repositori ini
 `;
 }
+
+exports.conf = {
+ aliases: [], 
+ cooldown: '10'
+} 
+exports.help = {
+ name: 'github', 
+ description: 'Cari github org lain 😏', 
+ usage: 'github <Nama Repo>' 
+} 
