@@ -81,11 +81,9 @@ async function gameBuilder (client, msg, args){
 			}else if(oppr === 3){
 				msgs = `${numberOne} × ${numberTwo} = ?`;
 				answer = numberOne * numberTwo;
-			}else if(oppr === 4){
+			}else{
 				msgs = `${numberOne} : ${numberTwo} = ?`;
 				answer = numberOne / numberTwo;
-			}else {
-				throw new TypeError('Gelo >:(');
 			}
 			await msg.reply(`you have 15 seconds to resolve this.\n\`\`\`${msgs}\`\`\``);
 			const filter = res => !isNaN(res.content) && res.author.id === msg.author.id;
@@ -103,7 +101,7 @@ async function gameBuilder (client, msg, args){
 			const emo = ['⬅', '↖', '⬆', '↗', '➡', '↘', '⬇', '↙'];
 			let mustAns = '';
 			for(let i = 0; i < 10; i++){
-				mustAns += emo[Math.floor(Math.random()*emo.length)-1];
+				mustAns += emo[Math.floor(Math.random()*emo.length)%emo.length];
 			}
 			const m = await msg.reply(`you have 15 seconds to type this.\n\`\`\`${mustAns}\`\`\``);
 			const filter = res => res.content === mustAns && res.author.id === msg.author.id;
