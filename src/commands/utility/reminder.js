@@ -40,6 +40,6 @@ exports.conf = {
 } 
 exports.help = {
   name: 'reminder', 
-  description: 'Untuk ketika Anda perlu mengingat sesuatu, ingat kalo botnya restart atau off, ini gk akan bekerja, usahakan waktunya minimal beberapa. jam saja', 
+  description: 'Untuk ketika Anda perlu mengingat sesuatu, ingat kalo botnya restart atau off, Ini gk akan bekerja, Usahakan waktunya minimal beberapa jam saja', 
   usage: 'reminder <number>[s/m/h/d]'  
 } 
