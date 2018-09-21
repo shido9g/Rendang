@@ -16,7 +16,8 @@ Servers    :: ${client.guilds.size.toLocaleString()}
 Channels   :: ${client.channels.size.toLocaleString()}
 Discord.js :: v${version}
 Node       :: ${process.version}\`\`\``)
-		.addField('\u200B', `[Github Repository](https://github.com/CodDevelopment/Rendang) | [CI Status](https://travis-ci.org/CodDevelopment/Rendang)`, true);
+		.addField('📌 About me', 'Rendang is a **spicy** meat dish which originated from **Indonesia**, especially the ethnic group of **Minangkabau** people, and is now commonly served across the country.')
+		.addField('\u200B', `[Github Repository](https://github.com/CodDevelopment/Rendang) | [CI Status](https://travis-ci.org/CodDevelopment/Rendang)`);
 		return msg.channel.send(embed);
 	} catch (err) {
 		return msg.channel.send(err.stack, { code: 'ini' });
