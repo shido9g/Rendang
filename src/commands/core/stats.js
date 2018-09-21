@@ -17,6 +17,7 @@ Channels   :: ${client.channels.size.toLocaleString()}
 Discord.js :: v${version}
 Node       :: ${process.version}\`\`\``)
 		.addField('\u200B', `[Github Repository](https://github.com/CodDevelopment/Rendang) | [CI Status](https://travis-ci.org/CodDevelopment/Rendang)`, true);
+		return msg.channel.send(embed);
 	} catch (err) {
 		return msg.channel.send(err.stack, { code: 'ini' });
 	}
