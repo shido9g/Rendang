@@ -33,7 +33,7 @@ exports.run = async (client, message, args, color) => {
 		const choice = number.indexOf(response.first().emoji.name);
 		const { text } = await snek.get(result[choice].result.url);
 	   const ouch = client.util.chunk(load(text)('.lyrics').text().trim(), 400)
-     const pilGan = ['⏪', '⬅', '🗑️', '➡', '⏩'];
+     const pilGan = ['⏪', '⬅', '🔴', '➡', '⏩'];
     let index = 0;
     embed.setTitle(result[choice].result.full_title);
 		embed.setURL(result[choice].result.url);
@@ -53,7 +53,7 @@ exports.run = async (client, message, args, color) => {
 		});
 		if(!response.size) return undefined;
 		const emoji = response.first().emoji.name;
-		if(emoji === '🗑️') return thisMes.delete();
+		if(emoji === '🔴') return thisMes.delete();
 		if(emoji === '⏪') index -= 3;
 		if(emoji === '⬅') index--;
 		if(emoji === '➡') index++;
