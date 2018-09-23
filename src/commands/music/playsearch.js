@@ -13,7 +13,7 @@ async function playSearch (client, msg, args){
 		.setDescription(videos.map((x,i) => `\`${i+1}\`. ${x.title}`).join('\n'))
 		.setFooter('ℹ️ To select song please provide value 1-10');
 		const thisMess = await msg.channel.send(embed);
-		const filter = msgs =>  isNaN(msgs.content) && msgs.author.id === msg.author.id;
+		const filter = msgs =>  !isNaN(msgs.content) && msgs.author.id === msg.author.id;
 		const responses = await msg.channel.awaitMessages(filter, { max: 1, time: 15000});
 		if(!responses.size) return thisMess.delete();
 		const choice = parseInt(responses.first().content, 10);
