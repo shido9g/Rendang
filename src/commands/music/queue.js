@@ -2,7 +2,7 @@ async function queueS (client, msg, args){
 	try{
 		const queue = client.queue.get(msg.guild.id);
 		if(!queue) return msg.channel.send('Not playing anything right now :/');
-		const nowPlay = songs[0];
+		const nowPlay = queue.songs[0];
 		const q = queue.songs.slice(1);
 		return msg.channel.send(`
 **Now Playing**: ${nowPlay.title}
