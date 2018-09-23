@@ -40,7 +40,8 @@ async function handleVideo (video, msg, voiceChannel, hide = false){
 		id: video.id,
 		title: video.title,
 		url: `https://www.youtube.com/watch?v=${video.id}`,
-		author: msg.author
+		author: msg.author,
+		video
 	}
 	if(!queue){
 		try{
