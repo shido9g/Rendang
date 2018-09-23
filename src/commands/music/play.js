@@ -55,9 +55,9 @@ async function handleVideo (video, msg, voiceChannel, hide = false){
 				playing: true,
 				loop: false
 			}
-			play(msg, song);
 			thisMess.delete();
-			return msg.client.queue.set(msg.guild.id, Queue);
+			msg.client.queue.set(msg.guild.id, Queue);
+			return play(msg, song);
 		}catch(e){
 			msg.client.queue.delete(msg.guild.id);
 			return msg.channel.send(e.stack, { code: 'diff' } );
