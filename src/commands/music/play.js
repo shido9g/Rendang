@@ -1,13 +1,13 @@
 const { RichEmbed } = require('discord.js');
-const { GOOGLE_KEY } = process.env;
+const { GOOGLE_API_KEY } = process.env;
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
 async function playCommand(client, msg, args){
 	if(!args.length) return msg.channel.send(exports.help.usage, { code: 'asalWehCodemah' });
 	try{
-		if(!GOOGLE_KEY) throw TypeError('NO GOOGLE KEY IN ENV >:(');
-		const youtube = new YouTube(GOOGLE_KEY);
+		if(!GOOGLE_API_KEY) throw TypeError('NO GOOGLE KEY IN ENV >:(');
+		const youtube = new YouTube(GOOGLE_API_KEY);
 		
 		const vc = msg.member.voiceChannel;
 		if(!vc) return msg.channel.send('😡 | Join vc first aj*');
