@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 exports.run = async (client, message, args, color) => {
 
 	
-	if(!args[0]) return message.channel.send(`**Silakan tentukan beberapa teks**`);
+	if(!args[0]) return message.channel.send(`**Mohon masukkan beberapa teks**`);
 	
   let postMsg = await message.channel.send('**Mohon tunggu sebentar...**');
   

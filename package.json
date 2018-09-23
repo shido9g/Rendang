@@ -48,9 +48,10 @@
     "superagent": "^3.8.3",
     "weather-js": "^2.0.0", 
     "canvas-constructor": "^1.1.0", 
-    "canvas": "^1.6.12",
+    "canvas": "github:Automattic/node-canvas#92b192447e9b9ae98da0f801e4e34afdd1dc1ef8",
     "memejs": "1.0.7", 
-    "relevant-urban": "^2.0.0"
+    "relevant-urban": "^2.0.0", 
+    "got": "^9.2.2" 
   },
   "devDependencies": {
     "eslint": "^4.19.1",
