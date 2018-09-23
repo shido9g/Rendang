@@ -51,7 +51,9 @@
     "canvas": "github:Automattic/node-canvas#92b192447e9b9ae98da0f801e4e34afdd1dc1ef8",
     "memejs": "1.0.7", 
     "relevant-urban": "^2.0.0", 
-    "got": "^9.2.2" 
+    "got": "^9.2.2",
+    "simple-youtube-api": "^5.0.2",
+    "ytdl-core": "^0.24.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
