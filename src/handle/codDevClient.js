@@ -5,6 +5,7 @@ class codDevBot extends Client {
     super (opt);
     
     this.queue = new Collection();
+    this.util = require('./util.js');
   }
 }
 
