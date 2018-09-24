@@ -6,6 +6,7 @@ const { get } = require('superagent');
 exports.run = async (client, msg, args) => {
 	let user = msg.mentions.users.first() || client.users.get(args[0]);
 	if(!user) user = msg.author;
+        if(user.bot)return message.channel.send(`**${message.author.username}**, Emang sejak kapan bot bisa nge gay?`);
 	let rate = Math.floor(Math.random()*101);
 	if(owners_id.includes(user.id)) rate = Math.floor(Math.random()*2);
 	/* Canvas */
