@@ -6,7 +6,7 @@ async function queueS (client, msg, args){
 		const q = queue.songs.slice(1);
 		return msg.channel.send(`
 **Now Playing**: ${nowPlay.title}
-\`\`\`${trimArray(q).map((x, i) => `${i+1}. ${x.title}`).join('\n')}\`\`\``);
+\`\`\`${trimArray(q.map(x => x.title)).map((x, i) => `${i+1}. ${x}`).join('\n')}\`\`\``);
 	} catch (err) {
 		return msg.channel.send(err.stack, { code: 'ini' });
 	}
