@@ -3,7 +3,7 @@ class TestEmbed {
 		if(!args.length) return msg.channel.send(this.help.usage, { code: 'unu' });
 		try {
 			args = JSON.parse(args.join(' '));
-			return msg.channel.send(embed: args);
+			return msg.channel.send({embed: args});
 		}catch(e){
 			return msg.channel.send(e.message, {code: 'bk' });
 		}
