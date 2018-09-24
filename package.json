@@ -1,6 +1,6 @@
 {
   "name": "rendang-bot",
-  "version": "0.8.2",
+  "version": "1.2.8",
   "description": "Rendang Discord BOT",
   "main": "index.js",
   "engines": {
