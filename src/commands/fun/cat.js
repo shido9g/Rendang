@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const { get } = require('superagent');
+const randomMeow = require('random-meow');
 
 function showCat (client, msg, args){
 	try{
@@ -10,11 +10,11 @@ function showCat (client, msg, args){
 }
 
 exports.getCat = async (channel, extend = '') => {
-	const { body: { file } } = await get('https://aws.random.cat/meow');
+	const url = await randomMeow()
 	const ctx = new RichEmbed();
 	ctx.setTitle('🐈 Cat');
-	ctx.setURL(file);
-	ctx.setImage(file);
+	ctx.setURL(url);
+	ctx.setImage(url);
 	return channel.send(extend, {embed: ctx});
 }
 
