@@ -1,4 +1,4 @@
-const { post } = require('superagent');
+const { post } = require('node-superfetch');
 const { RichEmbed } = require('discord.js');
 
 async function cppRunner (client, msg, args){
