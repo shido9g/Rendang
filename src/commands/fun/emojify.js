@@ -23,7 +23,7 @@ const mapping = {
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   if (args.length < 1) {
-    message.channel.send('You must provide some text to emojify!');
+    message.channel.send('Kamu harus memasukkan text yang ingin di jadikan emoji atau di perbesar!');
 }
 
 message.channel.send(
@@ -43,6 +43,6 @@ exports.conf = {
 exports.help = {
   name: "emojify",
   description: "Membuat Text Menjadi Emoji",
-  usage: "emojify [TEXT HERE]"
+  usage: "emojify [text]"
   
 }
