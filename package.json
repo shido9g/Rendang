@@ -1,10 +1,10 @@
 {
   "name": "rendang-bot",
-  "version": "1.2.9",
+  "version": "1.3.2",
   "description": "Rendang Discord BOT",
   "main": "index.js",
   "engines": {
-    "node": "8.12.0",
+    "node": "10.x",
     "npm": "6.4.1"
   },
   "scripts": {
@@ -57,10 +57,10 @@
     "node-superfetch": "^0.1.9",
     "opusscript": "0.0.6",
     "quick.db": "^7.0.0-b15",
+    "random-meow": "^2.2.5",
     "relevant-urban": "^2.0.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
-    "random-meow": "^2.2.5",
     "simple-youtube-api": "^5.0.2",
     "snekfetch": "^4.0.4",
     "sqlite": "^3.0.0",
