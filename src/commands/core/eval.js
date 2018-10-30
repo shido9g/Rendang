@@ -1,6 +1,6 @@
 const { owners_id } = require("../../config.json");
 const { RichEmbed } = require("discord.js");
-const { post } = require('snekfetch');
+const { post } = require('node-superfetch');
 const path = require("path");
 const SQL = require("sqlite3").verbose();
 

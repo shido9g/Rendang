@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const { get } = require('superagent');
+const { get } = require('node-superfetch');
 
 async function gameBuilder (client, msg, args){
 	try{

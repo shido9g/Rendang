@@ -1,6 +1,6 @@
 // Calling package 
 const { Canvas } = require('canvas-constructor');
-const snekfetch = require('snekfetch');
+const { get } = require('node-superfetch');
 
 // run cmd handler
 exports.run = async (client, message, args) => {
@@ -18,9 +18,9 @@ let user;
 };
 
 async function getBeautiful(client, avatar){
-	const base = await snekfetch.get('https://raw.githubusercontent.com/Soumil07/York-Dev/master/assets/images/plate_beautiful.png');
+	const base = await get('https://raw.githubusercontent.com/Soumil07/York-Dev/master/assets/images/plate_beautiful.png');
 	const toMeme = avatar.replace(/\.gif.+/g, '.png');
-	const { body } = await snekfetch.get(toMeme);
+	const { body } = await get(toMeme);
 	return new Canvas(634, 675)
     .setColor(client.color)
     .addRect(0, 0, 634, 675)

@@ -1,5 +1,5 @@
 const sess = new Set();
-const { get } = require('superagent');
+const { get } = require('node-superfetch');
 
 async function tts (client, msg, args){
 	const vc = msg.member.voiceChannel;

@@ -1,7 +1,7 @@
 const { owners_id } = require('../../../src/config');
 const { loadImage } = require('canvas');
 const { Canvas } = require('canvas-constructor');
-const { get } = require('superagent');
+const { get } = require('node-superfetch');
 
 exports.run = async (client, msg, args) => {
 	let user = msg.mentions.users.first() || client.users.get(args[0]);

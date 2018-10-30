@@ -1,5 +1,5 @@
 const { Canvas, sepia } = require('canvas-constructor');
-const { get } = require('superagent');
+const { get } = require('node-superfetch');
 
 async function Sepia (client, msg, args){
     let user = msg.mentions.users.first() || client.users.get(args[0]);

@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const { get } = require('snekfetch');
+const { get } = require('node-superfetch');
 
 exports.run = async (client, message, args) => {
   let { body } = await get('http://api.adviceslip.com/advice');
