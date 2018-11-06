@@ -41,6 +41,7 @@
     "canvas-constructor": "^1.1.2",
     "cheerio": "^1.0.0-rc.2",
     "discord.js": "^11.4.2",
+    "discordeco.js": "^0.5.0",
     "enmap": "^4.0.11",
     "enmap-sqlite": "^2.0.5",
     "erlpack": "github:discordapp/erlpack",
