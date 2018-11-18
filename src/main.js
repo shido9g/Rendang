@@ -13,4 +13,4 @@ shards.on('message', (shard, msg) => {
     console.log(`[${new Date().toString().split(" ", 5).join(" ")}] #${shard.id} | ${msg._eval} | ${msg._result}`);
 });
 
-shards.spawn();
+shards.spawn(this.totalShards, 5000);
