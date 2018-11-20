@@ -1,6 +1,6 @@
 const { Client, Collection } = require('discord.js');
 
-class codDevBot extends Client {
+class Rendang extends Client {
   constructor (opt) {
     super (opt);
     
@@ -9,4 +9,4 @@ class codDevBot extends Client {
   }
 }
 
-module.exports = codDevBot;
+module.exports = Rendang;

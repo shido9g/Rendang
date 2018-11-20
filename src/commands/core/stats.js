@@ -17,7 +17,7 @@ Channels   :: ${client.channels.size.toLocaleString()}
 Discord.js :: v${version}
 Node       :: ${process.version}\`\`\``)
 		.addField('📌 About me', 'Rendang is a **spicy** meat dish which originated from **Indonesia**, especially the ethnic group of **Minangkabau** people, and is now commonly served across the country.')
-		.addField('\u200B', `[Github Repository](https://github.com/CodDevelopment/Rendang) | [CI Status](https://travis-ci.org/CodDevelopment/Rendang)`);
+		.addField('\u200B', `[Github Repository](https://github.com/DiscordBotsDev/Rendang) | [CI Status](https://travis-ci.org/DiscordBotsDev/Rendang)`);
 		return msg.channel.send(embed);
 	} catch (err) {
 		return msg.channel.send(err.stack, { code: 'ini' });
