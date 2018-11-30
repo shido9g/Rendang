@@ -63,3 +63,4 @@ typings/
 # idk
 package-lock.json
 cache/
+datatemp/
