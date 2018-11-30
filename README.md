@@ -1,4 +1,4 @@
-# Rendang BOT Travis CI | [![Build Status](https://travis-ci.org/CodDevelopment/Rendang.svg?branch=master)](https://travis-ci.org/CodDevelopment/Rendang) <code>Rebuild CI</code>
+# Rendang BOT Travis CI | [![Build Status](https://travis-ci.org/CodDevelopment/Rendang.svg?branch=master)](https://travis-ci.org/DiscordBotsDev/Rendang)
 
 ## Available Commands
 
