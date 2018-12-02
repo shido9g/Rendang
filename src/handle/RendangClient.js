@@ -5,7 +5,7 @@ class Rendang extends Client {
     super (opt);
     
     this.queue = new Collection();
-    this.util = require('./util.js');
+    this.util = new require('./util.js');
   }
 }
 
